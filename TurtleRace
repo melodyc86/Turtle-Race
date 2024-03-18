@@ -1,0 +1,95 @@
+from turtle import *
+import random
+import time
+
+def draw_dashes(length, num_dashes):
+   for i in range(num_dashes):
+      forward(length/(num_dashes*2))
+      penup()
+      forward(length/(num_dashes*2))
+      pendown()
+
+speed(-1)
+penup()
+goto(-140, 140)
+
+for label in range(16):
+   write(label, align="center")
+   right(90)
+   forward(10)
+   pendown()
+   draw_dashes(150,10)
+   penup()
+   backward(160)
+   left(90)
+   forward(20)
+
+tom = Turtle()
+tom.color("blue")
+tom.shape("turtle")
+tom.goto(-160,100)
+tom.pendown()
+
+jack = Turtle()
+jack.color("green")
+jack.shape("turtle")
+jack.penup()
+jack.goto(-160,70)  
+jack.pendown()
+
+harry = Turtle()
+harry.color("red")
+harry.shape("turtle")
+harry.penup()
+harry.goto(-160,40)  
+harry.pendown()
+
+fred = Turtle()
+fred.color("orange")
+fred.shape("turtle")
+fred.penup()
+fred.goto(-160,10)  
+fred.pendown()
+
+tom_total = 0
+jack_total = 0
+harry_total = 0
+fred_total = 0
+
+
+while True:
+  tom_steps = random.randint(1,5)
+  jack_steps = random.randint(1,5)
+  harry_steps = random.randint(1,5)
+  fred_steps = random.randint(1,5)
+  tom.forward(tom_steps)
+  jack.forward(jack_steps)
+  harry.forward(harry_steps)
+  fred.forward(fred_steps)
+  tom_total += tom_steps
+  jack_total += jack_steps
+  harry_total += harry_steps
+  fred_total += fred_steps
+  if tom_total >= 320:
+     tom.write("Tom is the winner")
+     time.sleep(4)
+     break
+  if jack_total >= 320:
+     jack.write("Jack is the winner")
+     time.sleep(4)
+     break
+  if harry_total >= 320:
+     harry.write("Harry is the winner")
+     time.sleep(4)
+     break
+  if fred_total >= 320:
+     fred.write("Fred is the winner")
+     time.sleep(4)
+     break
+
+
+
+
+
+
+
